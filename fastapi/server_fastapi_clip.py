@@ -30,20 +30,32 @@ app.add_middleware(
     allow_headers = ["*"],
 )
 
+# 노출 url 설정
 @app.get("/images={url}")
 async def read_root(jsn):
+    # 노출 url 이용할 부분 url
     url = json.loads(jsn)['url']
+    
+    # 분류 클래스 항목
     labels = json.loads(jsn)['labels'].split(",")
+    
+    # 이미지 url
     image_url = "https://" + url
-    print(image_url)
+
+    # clip모델 실행
     result = await clip_model.predict_text_from_image(image_url, labels)
+    
+    # json 리턴
     return {'label' : result}
 
 # Run the server
 if __name__ == "__main__":
     uvicorn.run("server_fastapi_clip:app",
                 reload = True,
+
+                # 호스트 주소(127.0.0.1:5000)
                 host= "127.0.0.1",
                 port=5000,
+                
                 log_level="info"
                 )

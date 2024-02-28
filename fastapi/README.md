@@ -11,5 +11,7 @@
 - 8. json5 : 0.9.6
  
 ## 2. 송신 json형태 예시
-- {"url" : "https://를 뺀 url", "labels" : "cat, dog, tiger, pig"}
+- {"url" : "health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg", "labels" : "cat, dog, tiger, pig"}
 
+## 3. return json형태 예시
+- {"label" : "cat"}

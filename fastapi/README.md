@@ -15,3 +15,14 @@
 
 ## 3. return json형태 예시
 - {"label" : "cat"}
+
+## 4. 실행 방법
+server_fastapi_clip.py 실행 (단, clip_model.py와 동일한 다이렉트 필요)
+
+## 5. 확인 방법
+현재까진
+127.0.0.1:5000/docs를 통해 확인가능
+
+![image](https://github.com/hjhan1201/AIFFELthon/assets/89675001/6d2a8ee6-6f73-44ef-8cf7-778be8782c51)
+
+![image](https://github.com/hjhan1201/AIFFELthon/assets/89675001/ee0a1486-27ea-49c6-a33c-c88a8dd53d7c)

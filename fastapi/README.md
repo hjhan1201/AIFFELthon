@@ -10,5 +10,6 @@
 - 7. fastapi : 0.103.0
 - 8. json5 : 0.9.6
  
-## 송신 json형태
+## 2. 송신 json형태 예시
+- {"url" : "https://를 뺀 url", "labels" : "cat, dog, tiger, pig"}
 

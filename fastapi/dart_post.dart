@@ -5,7 +5,7 @@ class Image_to_label {
   // 생성자로 받을 url
   String url;
 
-  // 클래스(원하시는대로 늘리면 됩니다.)
+  // 클래스(조정하시면 됩니다.)
   List<String> text_label = [
     'cat',
     'dog',
@@ -17,13 +17,13 @@ class Image_to_label {
   ];
 
   // api주소(fetch로 json 송신 시도)
-  String api_url = 'https://68b2-114-202-17-6.ngrok-free.app/';
+  String api_url = 'https://5c90-114-202-17-6.ngrok-free.app/';
 
   // 생성자
   Image_to_label(this.url);
 
   // map화
-  Map<String, dynamic> toMap() => {'url': url, 'labels': text_label.join(', ')};
+  Map<String, dynamic> toMap() => {'url': url, 'labels': text_label.join(',')};
 
   // json 송신 후 label return 받기
   void get_label() async {
@@ -47,6 +47,6 @@ class Image_to_label {
 void main() {
   // 이미지 URL을 통해 라벨 호출하는 코드
   Image_to_label(
-          'https://health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg')
+          'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMTNfMTIx%2FMDAxNzAyNDc2OTIwMzQ2.36EDpNM_U-MQ5LNQE_3QWkIf1jU2fSx0VbzQDffK_9cg.wjOxtDWb2NGvwOfb0zoSdTHU9yqceUWEmzI8lTt-paAg.JPEG.candle0730%2F%25B0%25B3_%25B6%25CB%25B2%25BF.jpg&type=sc960_832')
       .get_label();
 }

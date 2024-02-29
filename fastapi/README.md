@@ -11,7 +11,7 @@
 - 8. pydantic : 1.10.8
  
 ## 2. 송신 json형태 예시
-- {"url" : "health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg", "labels" : "cat, dog, tiger, pig"}
+- {"url" : "https://health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg", "labels" : "cat, dog, tiger, pig"}
 
 ## 3. return string 형태 예시
 - "cat"

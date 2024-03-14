@@ -2,22 +2,24 @@ import uvicorn  # pip install uvicorn
 from fastapi import FastAPI  # pip install fastapi
 from fastapi.middleware.cors import CORSMiddleware  # 추가된 부분 cors 문제 해결을 위한
 from pydantic import BaseModel
+import json
 
 # 모델버전
 # 1. python : 3.11.5
 # 2. uvicorn : 0.20.0
 # 3. fastapi : 0.103.0
 # 4. pydantic : 1.10.8
+# 5. json : 2.0.9 
 
 # 수신 json형태
-# {"url" : "url", "labels" : "cat, dog, tiger, pig"}
-# url + label로 받는 형태
+# {"path" : "test.jpg", "labels" : "cat, dog, tiger, pig"}
+# path + label로 받는 형태
 
 # 예측 모듈 가져오기
 import clip_model
 
 class get_json(BaseModel):
-    url : str
+    path : str
     labels : str
 
 # FastAPI application
@@ -41,13 +43,16 @@ async def read_root(jsn:get_json):
     labels = jsn.labels.split(",")
     
     # url 받기
-    image_url = jsn.url
+    path = jsn.path
     
     # 모델 예측하기
-    result = await clip_model.predict_text_from_image(image_url, labels)
-    
-    # string 리턴
-    return result
+    label, prob = await clip_model.predict_text_from_image(path, labels)    
+    result = {"label" : label, "prob" : str(prob)}
+    json_str = json.dumps(result, default=str)
+
+    # json 리턴
+    # {"label" : "cat", "prob" : "0.65454"}
+    return json_str
 
 # Run the server
 if __name__ == "__main__":

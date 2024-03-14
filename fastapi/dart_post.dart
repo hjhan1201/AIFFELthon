@@ -20,10 +20,10 @@ class Image_to_label {
   String api_url = 'https://5c90-114-202-17-6.ngrok-free.app/';
 
   // 생성자
-  Image_to_label(this.url);
+  Image_to_label(this.path);
 
   // map화
-  Map<String, dynamic> toMap() => {'url': url, 'labels': text_label.join(',')};
+  Map<String, dynamic> toMap() => {'path': path, 'labels': text_label.join(',')};
 
   // json 송신 후 label return 받기
   void get_label() async {

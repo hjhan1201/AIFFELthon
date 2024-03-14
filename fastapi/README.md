@@ -5,13 +5,15 @@
 - 2. pytorch : 2.2.0(cpu)
 - 3. transformers : 4.32.1
 - 4. Pillow : 10.0.1
-- 5. requests : 2.31.0
+- 5. boto3 : 1.26.76
 - 6. uvicorn : 0.20.0
 - 7. fastapi : 0.103.0
 - 8. pydantic : 1.10.8
+- 9. json : 2.0.9 
+- 포스트용 requests : 2.31.0
  
 ## 2. 송신 json형태 예시
-- {"url" : "https://health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg", "labels" : "cat, dog, tiger, pig"}
+- {"path" : "my.jpg", "labels" : "cat, dog, tiger, pig"}
 
 ## 3. return string 형태 예시
 - "cat"
